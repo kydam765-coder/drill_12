@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-labelledby="title description">
+  <title id="title">Boy character state diagram</title>
+  <desc id="description">IDLE transitions to RUN with direction keys or AUTORUN with A. RUN returns to IDLE when direction keys are released. AUTORUN returns to RUN when a direction key is pressed, or to IDLE after five seconds.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#334155"/>
+    </marker>
+    <style>
+      text { font-family: Segoe UI, Arial, sans-serif; fill: #172033; }
+      .state { stroke-width: 3; rx: 18; }
+      .edge { fill: none; stroke: #334155; stroke-width: 2.5; marker-end: url(#arrow); }
+      .label { font-size: 15px; font-weight: 600; paint-order: stroke; stroke: #fff; stroke-width: 6px; stroke-linejoin: round; }
+      .name { font-size: 24px; font-weight: 700; }
+      .detail { font-size: 14px; fill: #475569; }
+    </style>
+  </defs>
+  <rect width="1000" height="500" fill="#f8fafc"/>
+  <text x="500" y="46" text-anchor="middle" font-size="28" font-weight="700">Boy State Diagram</text>
+
+  <circle cx="95" cy="250" r="13" fill="#172033"/>
+  <path class="edge" d="M108 250 H175"/>
+
+  <rect class="state" x="180" y="205" width="170" height="90" fill="#dbeafe" stroke="#3b82f6"/>
+  <text class="name" x="265" y="245" text-anchor="middle">IDLE</text>
+  <text class="detail" x="265" y="270" text-anchor="middle">5초 이후에도 계속 대기</text>
+
+  <rect class="state" x="650" y="100" width="190" height="90" fill="#dcfce7" stroke="#22c55e"/>
+  <text class="name" x="745" y="140" text-anchor="middle">RUN</text>
+  <text class="detail" x="745" y="165" text-anchor="middle">키 방향으로 이동</text>
+
+  <rect class="state" x="650" y="310" width="220" height="100" fill="#ffedd5" stroke="#f97316"/>
+  <text class="name" x="760" y="352" text-anchor="middle">AUTORUN</text>
+  <text class="detail" x="760" y="378" text-anchor="middle">5초 · 가속 · 확대 · 반전</text>
+
+  <path class="edge" d="M350 225 C455 150 545 145 645 145"/>
+  <text class="label" x="500" y="160" text-anchor="middle">방향키</text>
+  <path class="edge" d="M650 165 C545 240 455 250 355 250"/>
+  <text class="label" x="500" y="235" text-anchor="middle">방향키 뗌</text>
+
+  <path class="edge" d="M350 275 C455 350 535 355 645 355"/>
+  <text class="label" x="495" y="345" text-anchor="middle">A 키</text>
+  <path class="edge" d="M700 310 C640 265 650 220 700 190"/>
+  <text class="label" x="625" y="255" text-anchor="middle">방향키</text>
+  <path class="edge" d="M650 390 C540 450 430 445 345 295"/>
+  <text class="label" x="500" y="430" text-anchor="middle">5초 경과</text>
+</svg>
